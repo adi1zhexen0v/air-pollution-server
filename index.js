@@ -18,6 +18,7 @@ app.get("/api/predictions", (req, res) => {
 
     const lines = data.split("\n");
     const headers = lines[0].replace(/\r/g, "").split(",");
+
     const rows = lines
       .slice(1)
       .filter(Boolean)
@@ -25,7 +26,14 @@ app.get("/api/predictions", (req, res) => {
         const values = line.replace(/\r/g, "").split(",");
         const obj = {};
         headers.forEach((h, i) => {
-          obj[h] = values[i];
+          const key = h.trim();
+          let value = values[i]?.trim();
+
+          if (["latitude", "longitude", "PM2.5"].includes(key)) {
+            obj[key] = Number(value);
+          } else {
+            obj[key] = value;
+          }
         });
         return obj;
       });
