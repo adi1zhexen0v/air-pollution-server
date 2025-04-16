@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 
 app.get("/api/predictions", (req, res) => {
-  const csvFile = path.join(__dirname, "predicted_pm25.csv");
+  const csvFile = path.join(__dirname, "predicted_pm25_measurements.csv");
   fs.readFile(csvFile, "utf8", (err, data) => {
     if (err) return res.status(500).json({ error: "Failed to read file" });
 
