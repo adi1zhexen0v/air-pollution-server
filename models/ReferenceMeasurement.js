@@ -2,9 +2,9 @@ import mongoose from "mongoose";
 
 const referenceMeasurementSchema = new mongoose.Schema(
   {
-    pm1_raw: { type: Number, required: true },
-    pm25_raw: { type: Number, required: true },
-    pm10_raw: { type: Number, required: true },
+    pm1_raw: { type: Number },
+    pm25_raw: { type: Number },
+    pm10_raw: { type: Number },
 
     pm1_calibrated: { type: Number },
     pm25_calibrated: { type: Number },
