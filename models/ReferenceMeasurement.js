@@ -10,6 +10,9 @@ const referenceMeasurementSchema = new mongoose.Schema(
     pm25_calibrated: { type: Number },
     pm10_calibrated: { type: Number },
 
+    pm25_aqi: { type: Number },
+    pm25_ugm3: { type: Number },
+
     temperature: { type: Number },
     pressure: { type: Number },
     humidity: { type: Number },
@@ -23,5 +26,7 @@ const referenceMeasurementSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+referenceMeasurementSchema.index({ createdAt: -1 });
 
 export const ReferenceMeasurement = mongoose.model("ReferenceMeasurement", referenceMeasurementSchema);

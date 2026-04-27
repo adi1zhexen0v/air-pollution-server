@@ -1,2 +1,8 @@
 /node_modules
 .env
+test.js
+ml/selection/outputs/
+__pycache__/
+*.pyc
+ml/virtual_colocation/output/
+ml/virtual_colocation/node_modules/

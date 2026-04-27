@@ -1,0 +1,8 @@
+{
+  "name": "virtual-colocation-import",
+  "type": "module",
+  "dependencies": {
+    "mongoose": "^8.0.0",
+    "dotenv": "^16.0.0"
+  }
+}

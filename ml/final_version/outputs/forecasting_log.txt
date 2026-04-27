@@ -1,0 +1,82 @@
+============================================================
+LOADING FORECASTING DATA
+============================================================
+Multi-station dataset: 3 stations (Kazhydromet-14, Kazhydromet-9, US Embassy)
+Total records: 1331
+Date range: 2020-03-26 to 2025-09-09
+PM2.5: mean=4.86, std=13.43 ug/m3
+
+============================================================
+TRAINING FORECASTING MODELS
+============================================================
+
+XGBoost dataset: 1220 rows, 41 features
+
+  Training + CV: XGBoost...
+  XGBoost: CV R2=-0.3458 (20.2s)
+
+Building sequences (lookback=30, horizon=7):
+  Kazhydromet-14: 140 sequences
+  Kazhydromet-9: 233 sequences
+  US Embassy: 847 sequences
+Total sequences: 1220
+
+  Training + CV: LSTM...
+  LSTM: CV R2=0.2319 (45.5s)
+
+  Training + CV: BiLSTM...
+  BiLSTM: CV R2=0.2045 (48.4s)
+
+  Training + CV: CNN-LSTM...
+  CNN-LSTM: CV R2=0.2093 (16.8s)
+
+============================================================
+TABLE 4.4: Forecasting Model Comparison (Daily, 7-Day Horizon)
+============================================================
+
+Model      |      R2 (mean+/-std) |  RMSE (ug/m3) |  MAE (ug/m3) |   Time
+---------------------------------------------------------------------------
+[BEST] LSTM  |        0.232+/-0.128 |         11.62 |         3.08 |  45.5s
+       CNN-LSTM |        0.209+/-0.121 |         11.79 |         3.12 |  16.8s
+       BiLSTM |        0.204+/-0.124 |         11.83 |         3.05 |  48.4s
+       XGBoost |       -0.346+/-0.242 |         15.95 |         4.93 |  20.2s
+
+Best model: LSTM (R2 = 0.232, RMSE = 11.62 ug/m3)
+Dataset: 1331 daily records from 3 stations
+Training sequences: 1220 (after 30-day lookback window)
+
+Per-Horizon RMSE (LSTM):
+  Day 1: 10.24 ug/m3
+  Day 2: 11.26 ug/m3
+  Day 3: 11.59 ug/m3
+  Day 4: 11.74 ug/m3
+  Day 5: 9.60 ug/m3
+  Day 6: 10.25 ug/m3
+  Day 7: 12.13 ug/m3
+
+Generating fig_forecasting_per_horizon.png...
+Saving forecasting_results.json...
+
+============================================================
+TABLE: Forecasting — Comparison with Literature
+============================================================
+Study                  | Location   | Horizon    | Best Model   |         RMSE | Resolution
+------------------------------------------------------------------------------------------
+Chen (2018)            | Beijing    | 1-48h      | LSTM         |         15.0 | Hourly    
+Zheng (2023)           | Multi-city | 1-72h      | CNN-BiGRU    |          8.3 | Hourly    
+Shah (2022)            | India      | 24h        | XGBoost      |         12.5 | Hourly    
+This work              | Astana     | 7-day      | LSTM         |        11.62 | Daily     
+
+============================================================
+FORECASTING COMPLETE
+============================================================
+
+Dataset: 1331 daily records from 3 stations (Kazhydromet-14, Kazhydromet-9, US Embassy)
+Date range: 2020-03-26 to 2025-09-09
+Training sequences: 1220 (after 30-day lookback window)
+
+Best model: LSTM (R2 = 0.232, RMSE = 11.62 ug/m3)
+
+Output files:
+  C:\Users\adilz\Desktop\NU ECE'26\Master Thesis\server-express\ml\final_version\outputs\forecasting_results.json
+  C:\Users\adilz\Desktop\NU ECE'26\Master Thesis\server-express\ml\final_version\outputs\fig_forecasting_per_horizon.png

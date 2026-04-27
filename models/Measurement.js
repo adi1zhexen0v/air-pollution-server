@@ -20,8 +20,19 @@ const measurementSchema = new mongoose.Schema(
     satellites: { type: Number },
 
     deviceId: { type: String, default: "ESP32-Unit1" },
+
+    sensor_id: { type: String },
+    calibrated_by_model: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "CalibrationModel",
+    },
+    calibration_timestamp: { type: Date },
+
+    synthetic: { type: Boolean, default: false },
   },
   { timestamps: true }
 );
+
+measurementSchema.index({ deviceId: 1, createdAt: -1 });
 
 export const Measurement = mongoose.model("Measurement", measurementSchema);

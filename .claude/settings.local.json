@@ -2,7 +2,22 @@
   "permissions": {
     "allow": [
       "Bash(ls:*)",
-      "Bash(wc:*)"
+      "Bash(wc:*)",
+      "Read(//c/Users/adilz/Desktop/NU ECE''''''''26/Master Thesis/server-express/**)",
+      "Bash(python selection/calibration_selection.py --mode synthetic)",
+      "Bash(cd:*)",
+      "Bash(find:*)",
+      "Bash(for sensor:*)",
+      "Bash(do echo:*)",
+      "Bash(grep \"$sensor\" \"C:/Users/adilz/Desktop/NU ECE''''26/Master Thesis/server-express/ml/final_version/final.measurements.csv\")",
+      "Bash(done)",
+      "Bash(python:*)",
+      "Bash(grep -E \"\\\\.\\(csv|json|py|js\\)$\")",
+      "Bash(curl:*)",
+      "Bash(xargs grep:*)",
+      "Bash(grep -r 51.1 \"C:\\\\Users\\\\adilz\\\\Desktop\\\\NU ECE''''26\\\\Master Thesis\\\\server-express\" --include=*.py)",
+      "Bash(grep -r \"scatter.*lat\\\\|scatter.*lon\\\\|folium\\\\|leaflet\\\\|basemap\\\\|cartopy\" \"C:\\\\Users\\\\adilz\\\\Desktop\\\\NU ECE''''26\\\\Master Thesis\\\\server-express\" --include=*.py)",
+      "Bash(find \"C:\\\\Users\\\\adilz\\\\Desktop\\\\NU ECE''''26\\\\Master Thesis\\\\server-express\" -type f \\\\\\(-name *.html -o -name *.tsx -o -name *.jsx \\\\\\) -print)"
     ]
   }
 }

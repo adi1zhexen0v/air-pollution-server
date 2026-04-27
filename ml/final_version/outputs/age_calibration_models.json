@@ -1,0 +1,102 @@
+[
+  {
+    "sensor_id": "Sensor-4",
+    "trained_at": "2026-03-25T20:22:08.382609",
+    "model_type": "MLR",
+    "coefficients": {
+      "intercept": 15.831904761904802,
+      "pm25_raw": 13.348877640554146,
+      "humidity": -0.8562108889081335,
+      "temperature": -8.301388559704815,
+      "pressure": -1.5287859094410061,
+      "heat_index": 9.143039662450576,
+      "hour": -0.7444022142385567,
+      "month": -0.16980700435256202,
+      "day_of_week": -0.953171415412251
+    },
+    "metrics": {
+      "r2": 0.9508829492596358,
+      "rmse": 2.619263395648338
+    },
+    "is_active": false,
+    "training_samples": 144,
+    "week": 1,
+    "period_start": "2026-02-25",
+    "period_end": "2026-03-03"
+  },
+  {
+    "sensor_id": "Sensor-4",
+    "trained_at": "2026-03-25T20:22:08.382609",
+    "model_type": "MLR",
+    "coefficients": {
+      "intercept": 4.899020979020969,
+      "pm25_raw": 0.8968970330845591,
+      "humidity": 1.0834830874985104,
+      "temperature": -5.5172721683349994,
+      "pressure": 0.31169127521457135,
+      "heat_index": 5.2270395522962225,
+      "hour": -0.16018593591469454,
+      "month": 0.0,
+      "day_of_week": -0.20161270499381895
+    },
+    "metrics": {
+      "r2": 0.22066022388196382,
+      "rmse": 2.082610903151368
+    },
+    "is_active": false,
+    "training_samples": 143,
+    "week": 2,
+    "period_start": "2026-03-03",
+    "period_end": "2026-03-09"
+  },
+  {
+    "sensor_id": "Sensor-4",
+    "trained_at": "2026-03-25T20:22:08.382609",
+    "model_type": "MLR",
+    "coefficients": {
+      "intercept": 7.244458398743848,
+      "pm25_raw": 0.41692873513274314,
+      "humidity": -2.756353987090116,
+      "temperature": -115.59430049504476,
+      "pressure": -12.680283890841606,
+      "heat_index": 117.41669524111461,
+      "hour": 1.6903735980493502,
+      "month": 0.0,
+      "day_of_week": 10.572687872740358
+    },
+    "metrics": {
+      "r2": 0.7137818596147831,
+      "rmse": 2.2583075047238967
+    },
+    "is_active": false,
+    "training_samples": 39,
+    "week": 3,
+    "period_start": "2026-03-09",
+    "period_end": "2026-03-15"
+  },
+  {
+    "sensor_id": "Sensor-4",
+    "trained_at": "2026-03-25T20:22:08.382609",
+    "model_type": "MLR",
+    "coefficients": {
+      "intercept": 13.041745457676756,
+      "pm25_raw": 2.961781346390461,
+      "humidity": -1.935939439435241,
+      "temperature": -59.389751464886544,
+      "pressure": -0.9912476395985651,
+      "heat_index": 58.33333160801209,
+      "hour": 3.3678569679049817,
+      "month": 0.0,
+      "day_of_week": -0.4753701997341855
+    },
+    "metrics": {
+      "r2": 0.2107456268306387,
+      "rmse": 9.081885331343733
+    },
+    "is_active": true,
+    "training_samples": 237,
+    "week": 4,
+    "period_start": "2026-03-15",
+    "period_end": "2026-03-25"
+  }
+]
